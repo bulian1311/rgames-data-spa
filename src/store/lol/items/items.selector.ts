@@ -39,3 +39,6 @@ export const selectItems = createSelector(
   [selectFilteredItems],
   (items) => items
 );
+
+export const selectItemById = (id: string) =>
+  createSelector([selectState], (state) => state.items[id]);

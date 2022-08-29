@@ -5,11 +5,26 @@ import { Props } from './modal.props';
 export const Modal = ({ children, content, ...props }: Props): JSX.Element => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hidden, setHidden] = useState<boolean>(true);
+  const [delayHandler, setDelayHandler] = useState<any>(null);
+
+  const handleMouseEnter = () => {
+    setDelayHandler(
+      setTimeout(() => {
+        setHidden(false);
+      }, 500)
+    );
+  };
+
+  const handleMouseLeave = () => {
+    clearTimeout(delayHandler);
+    setHidden(true);
+  };
 
   return (
     <div
-      onMouseEnter={() => setHidden(false)}
-      onMouseLeave={() => setHidden(true)}
+      className="cursor-pointer"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onMouseMove={(e) => setPosition({ x: e.pageX, y: e.pageY })}
       {...props}
     >
@@ -24,7 +39,6 @@ export const Modal = ({ children, content, ...props }: Props): JSX.Element => {
             hidden: hidden,
           }
         )}
-        {...props}
       >
         {content}
       </div>

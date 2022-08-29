@@ -14,7 +14,7 @@ export const Display = ({ ...props }: Props): JSX.Element => {
 
   return (
     <div className="flex items-center" {...props}>
-      <span className="uppercase mr-1">отображение:</span>
+      <span className="uppercase mr-2">отображение:</span>
       <DisplayButton
         icon="lines"
         onClick={() => handleClick('lines')}
