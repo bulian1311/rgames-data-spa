@@ -2,6 +2,7 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import {
   lolDisplayReducer,
   lolChampionsReducer,
+  lolChampionReducer,
   lolChampionFilterReducer,
   lolChampionSortReducer,
   lolItemsReducer,
@@ -13,6 +14,7 @@ export function makeStore() {
     reducer: {
       lolDisplay: lolDisplayReducer,
       lolChampions: lolChampionsReducer,
+      lolChampion: lolChampionReducer,
       lolChampionFilter: lolChampionFilterReducer,
       lolChampionSort: lolChampionSortReducer,
       lolItems: lolItemsReducer,
