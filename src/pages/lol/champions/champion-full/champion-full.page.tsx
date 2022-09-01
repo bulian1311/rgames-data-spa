@@ -4,7 +4,7 @@ import { Block, Champion } from '@components';
 import { useAppDispatch } from '@hooks';
 import { fetchChampionById } from '@store';
 
-export const ChampionPage = () => {
+export const ChampionFullPage = () => {
   const params = useParams();
   const dispatch = useAppDispatch();
 

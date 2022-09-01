@@ -5,9 +5,9 @@ import {
   HomePage,
   LolPage,
   ChampionsPage,
-  ChampionPage,
+  ChampionFullPage,
   ItemsPage,
-  ItemPage,
+  ItemFullPage,
 } from '@pages';
 
 export const App = () => {
@@ -23,12 +23,12 @@ export const App = () => {
 
               <Route path="champion">
                 <Route index element={<ChampionsPage />} />
-                <Route path=":championId" element={<ChampionPage />} />
+                <Route path=":championId" element={<ChampionFullPage />} />
               </Route>
 
               <Route path="item">
                 <Route index element={<ItemsPage />} />
-                <Route path=":itemId" element={<ItemPage />} />
+                <Route path=":itemId" element={<ItemFullPage />} />
               </Route>
             </Route>
           </Route>

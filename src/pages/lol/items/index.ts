@@ -1,2 +1,2 @@
 export * from './items.page';
-export * from './item';
+export * from './item-full';

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { TTagMatching, tagMatching } from '@types';
 import { ItemModal } from '../item-modal';
 import { Props } from './item-line.props';
@@ -19,24 +20,26 @@ export const ItemLine = ({ item, ...props }: Props): JSX.Element => {
 
   return (
     <ItemModal itemId={item.id}>
-      <div
-        className="flex items-center bg-slate-800 px-1 py-1 rounded-md hover:bg-slate-700"
-        {...props}
-      >
-        <img
-          className="rounded-md"
-          width={66}
-          height={66}
-          src={`http://ddragon.leagueoflegends.com/cdn/12.11.1/img/item/${item.image}`}
-        />
-        <div className="flex flex-col items-start flex-1 ml-4">
-          <span className="block">{item.name}</span>
-          <div className="flex justify-start items-center flex-wrap gap-2">
-            {renderTags()}
+      <Link to={`/lol/item/${item.id}`}>
+        <div
+          className="flex items-center bg-slate-800 px-1 py-1 rounded-md hover:bg-slate-700"
+          {...props}
+        >
+          <img
+            className="rounded-md"
+            width={66}
+            height={66}
+            src={`http://ddragon.leagueoflegends.com/cdn/12.11.1/img/item/${item.image}`}
+          />
+          <div className="flex flex-col items-start flex-1 ml-4">
+            <span className="block">{item.name}</span>
+            <div className="flex justify-start items-center flex-wrap gap-2">
+              {renderTags()}
+            </div>
           </div>
+          <span className="block mr-4">{item.gold}</span>
         </div>
-        <span className="block mr-4">{item.gold}</span>
-      </div>
+      </Link>
     </ItemModal>
   );
 };
