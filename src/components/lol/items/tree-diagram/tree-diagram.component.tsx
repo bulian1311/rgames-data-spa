@@ -1,7 +1,7 @@
 import React from 'react';
 import { Props } from './tree-diagram.props';
 
-export const TreeDiagram = ({ from, ...props }: Props): JSX.Element => {
+export const TreeDiagram = ({ itemId, ...props }: Props): JSX.Element => {
   return (
     <div className="relative flex justify-center">
       <div className="text-center">
