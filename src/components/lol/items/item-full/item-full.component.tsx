@@ -26,13 +26,13 @@ export const ItemFull = ({ ...props }: Props): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex items-start gap-4 justify-between mt-4">
+      <div className="flex flex-wrap items-start gap-4 justify-between mt-4">
         <img
           src={`http://ddragon.leagueoflegends.com/cdn/12.11.1/img/item/${item.image.full}`}
           alt={item.name}
         />
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 flex-1">
           <div dangerouslySetInnerHTML={{ __html: item.description }} />
 
           {item.into && (
